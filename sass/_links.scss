@@ -1,0 +1,85 @@
+%pseudo {
+	position: relative;
+	text-decoration: none;
+	padding-left: 0.7rem;
+	transition: $slow;
+}
+.link-classic {
+	@include text(1rem, #D4D6D4, $weight: bold);
+	@extend %pseudo;
+}
+.link-classic:hover, .link-classic:focus, .link-classic:active, #link-classic__footer:hover, #link-classic__footer:focus, #link-classic__footer:active {
+	color: $hover-link;
+}
+.link-classic:before, #link-classic__footer:before {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid #D4D6D4;
+	border-right: 7px solid transparent;
+	border-top: 7px solid transparent;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+}
+.link-classic:hover:before, #link-classic__footer:hover:before {
+	border-left: 7px solid $hover-link;
+}
+.link-classic:after, #link-classic__footer:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: rgb(212, 214, 212);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.link-classic:hover:after, #link-classic__footer:hover:after {
+	background: $hover-link;
+}
+.link-hero {
+	@include text(1rem, $hover-link, $weight: bold);
+	@extend %pseudo;
+}
+.link-hero:hover, .link-hero:focus, .link-hero:active {
+	color: #FFF;
+}
+.link-hero:before {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid $hover-link;
+	border-right: 7px solid transparent;
+	border-top: 7px solid transparent;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+}
+.link-hero:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: $hover-link;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.link-hero:hover:after {
+	background: #fff;
+}
+.link-hero:hover:before {
+	border-left: 7px solid #fff;
+}
+#link-classic__footer {
+	@include text(1rem, #D4D6D4, $weight: bold);
+	text-transform: uppercase;
+	@extend %pseudo;
+}

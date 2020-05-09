@@ -1,0 +1,94 @@
+.header {
+	width: 100%;
+	min-height: 811px;
+	background: $primary url('../img/hero.png') center no-repeat;
+	background-size: cover;
+	z-index: 5000;
+	position: relative;
+}
+.header__logos-grid {
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, 1110px) 1fr;
+}
+.header__logos-bg {
+	background-color: #FFF;
+	box-shadow: $shadow;
+	border-radius: 2px 0 0 2px;
+	grid-column: 2 / 4;
+}
+.header__logos-subgrid {
+	display: grid;
+	grid-template-columns: minmax(auto, 1110px) 1fr;
+}
+.header__logos-content {
+	grid-column: 1 / 2;
+	padding: 60px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	img {
+		max-width: 156px;
+		max-height: 113px;
+	}
+}
+.header__top {
+	padding-top: 23px;
+	display: flex;
+	justify-content: space-between;
+	// background: pink;
+}
+.header__hero {
+	padding: 100px 0;
+	max-width: 600px;
+}
+#Circle, #Strokes {
+	transition: $slow;
+}
+#Burger:hover > #Circle {
+	cursor: pointer;
+	fill: $hover-link;
+}
+#Burger:hover > #Strokes {
+	cursor: pointer;
+	fill: #FFF;
+}
+@media only screen and (max-width: 1109px) {
+	.header__logos-content {
+		flex-wrap: wrap;
+		padding: 60px 1rem;
+		img {
+			max-width: 120px;
+			height: auto;
+		}
+	}
+	.header__logos-bg, .header__logos-content {
+		width: 100%;
+	}
+	.header__logos-bg {
+		margin-top: 5.5rem;
+	}
+	.header__logos-grid, .header__logos-subgrid {
+		display: flex;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.header__logos-bg {
+		margin-top: 0.5rem;
+	}
+	.header__top img {
+		max-width: 160px;
+	}
+	.header__hero {
+		padding: 40px 0;
+	}
+	.header__logos-content {
+		padding: 30px 1rem;
+		img {
+			max-width: 100px;
+			height: auto;
+		}
+	}
+}
+
+
+
